@@ -36,10 +36,6 @@ jobs:
    needs: build
    runs-on: ubuntu-latest
    steps:
-      # make gradlew executeable
-     - name: Make gradlew executable
-       run: chmod +x ./gradlew
-
       # Runs build using gradle
      - name: Build with Gradle
        run: ./gradlew test
