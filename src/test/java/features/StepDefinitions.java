@@ -63,4 +63,27 @@ public class StepDefinitions {
         Assert.assertEquals(expectedResult, actualResult,0);
         System.out.println("The new final balance is: " + actualResult);
     }
+
+    @Given("Danny has a starting balance of {double}")
+    public void dannyHasAStartingBalanceOfStartBalance(double startingBalance) {
+        //throw new io.cucumber.java.PendingException();
+        System.out.println("Danny has a starting balance of "+startingBalance);
+        danny.setAccountBalance(startingBalance);
+    }
+
+    @When("Danny now tops up by {double}")
+    public void danny_now_tops_up_by(double newTopUp) {
+        // Write code here that turns the phrase above into concrete actions
+        this.topUpAmount = newTopUp;
+        //throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("The balance in his euro account should be {double}")
+    public void the_balance_in_his_euro_account_should_be(double newBalanceInAccount) {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
+        danny.getAccount("EUR").addFunds(topUpAmount);
+    }
+
+
 }
