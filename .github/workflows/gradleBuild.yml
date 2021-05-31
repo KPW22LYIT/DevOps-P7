@@ -30,3 +30,24 @@ jobs:
       # Runs build using gradle
       - name: Build with Gradle
         run: ./gradlew build
+        
+
+  test:
+   needs: build
+   runs-on: ubuntu-latest
+   steps:
+      - name: Setup JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+          distribution: 'adopt'
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # make gradlew executeable
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+      - name: Test suite in Gradle
+        run: ./gradlew test
