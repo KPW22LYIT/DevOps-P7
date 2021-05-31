@@ -1,3 +1,14 @@
+/*
+ * Account
+ *
+ * Version information
+ *
+ * Date 30/05/2021
+ *
+ * Author: Kevin Page-Wood and L00162107
+ *
+ * Copyright notice
+ */
 package revolut;
 
 import java.util.Currency;
